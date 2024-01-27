@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ 	<bean name="std" class="school.Student">
+ 		<property name="name" value="sunny"></property>
+ 		<property name="rollno" value="12321" />
+ 		<property name="address">
+ 			<list>
+ 				<value>jamikunta</value>
+ 				<value>karimnager</value>
+ 			</list>
+ 		</property>
+ 	</bean>
+   <bean name="sub" class="school.subjects">
+   		<property name="subject" value="maths" />
+   		<property name ="marks" value="12" />
+   		<property name="std">
+   			<ref bean="std"/>
+   			
+   		
+   		</property>
+   
+   </bean>
+     
+ 
+
+
+</beans>

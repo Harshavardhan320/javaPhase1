@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+ 
+      
+     <bean name="connection" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+     	<property name="url" value="jdbc:mysql://localhost:3306/phase3" />
+     	<property name="username" value="root" />
+     	<property name="password" value="K.harsha@2000" />
+     </bean>
+     
+     
+ 	<bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+ 		<property name="dataSource">
+ 			<ref bean="connection" />
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean name="controller" class="school.view.Model">
+ 		<property name="jdbcTemplate">
+ 			<ref bean="jdbcTemplate"/>
+ 		</property>
+ 	</bean>
+ 	
+ 	<bean name="display" class="school.Display">
+ 		<property name="model">
+ 			<ref bean="controller"/>
+ 		</property>
+ 	
+ 	</bean>
+ 	
+</beans>
