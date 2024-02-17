@@ -41,7 +41,7 @@ document.write("<h3>combination of arrays and objects</h3><p><del>Below content 
 var  arr1=[{username:"harsha", password:"vardhan", age:34}, {username:"mphasis", password:"Mphasis",}];
 document.write(arr1[0].username+" username whith password "+arr1[0].password);
 
-var a = {"s","as","s"};
+var a = ["s", "as", "s"];
 for(var i in a){
       console.log(typeof i);
 }
@@ -51,3 +51,9 @@ for(x of a){
 for(var h=0; h<a.length; h++){
       console.log(typeof h);
 }
+var annomausFunction=(function(a){
+      var privateVariable = "I am private";
+      console.log(privateVariable+" "+a);
+      return privateVariable;
+})(45);
+console.dir(document);

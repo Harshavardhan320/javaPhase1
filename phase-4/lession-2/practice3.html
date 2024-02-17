@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>IIFEs, Callbacks, and Closures.</title>
+      <script>
+            //IIFE imadetely invoked function expression
+            var IIFE = (function(number){
+                  for(var i=0;i<number;i++){
+                        document.write(i+" I am inside the IIFE <br>");
+                  }
+            })(6);
+
+            // A callback function is a function that is passed as an argument to another function. 
+
+            function School(name, opentime, callback, endtime){
+                  document.write("<br><br>A callback function is a function that is passed as an argument to another function.<br><br>");
+
+                  document.writeln(name+" School Open At "+opentime+"<br><br>");
+
+                  callback(endtime);
+
+            }
+
+            function displaytime(endtime){
+                  if(endtime == 1 && endtime >  0) {
+                        alert("School is closed!");
+                        document.writeln("Lunch Time.");
+                  }if (endtime > 1 && endtime < 5) {
+                        document.writeln("School Ending Time. ");
+                  } else {
+                        document.writeln("School Close. ");
+                  }
+            }
+            School( "Spr School Of Excellence", "9:00 AM" ,displaytime ,1 );
+      </script>
+</head>
+<body>
+      
+</body>
+</html>

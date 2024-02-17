@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Function And Prototypeing</title>
+</head>
+<body>
+      <h1 >Functions and Prototyping in JavaScript: Examples</h1>
+      <p id="name">Name :<span id="name"></span> </p> 
+      <p>Age : <span id="age"></span></p>
+      <button id="data">Get Data</button>
+
+      <script>
+            class  Person {
+                  name=null;
+                  age = null;
+                  constructor(name , age){
+                        this.name=name;
+                        this.age=age;
+                  }  
+                  getName(){
+                        return `Name is ${this.name}` ;
+                  }
+                  getAge(){
+                        return `Age is ${this.age}` ;
+                  }
+            }
+            var details = new Person("harsha", "25");
+            var dtn = document.getElementById("data");
+            dtn.onclick= function(){
+                  console.log(details.getName());
+                  document.getElementById("name").innerHTML=details.getName();
+                  document.getElementById("age").innerHTML=details.getAge();
+            };
+      </script>
+</body>
+</html>

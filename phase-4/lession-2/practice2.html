@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Working with Functions.</title>
+</head>
+<body id="body">
+      <h1>working with functions</h1>
+      <p>color name</p>
+      <p>color name</p>
+      <p>color name</p>
+      <p>color name</p>
+      <p>color name</p>
+
+
+      <button id="next">Click to change color</button>
+      <script>
+            var  colors = ["red", "blue", "green", "yellow"]; 
+            var  btn = document.getElementById("next");
+
+            btn.onclick= function(){
+                  var num = parseInt(Math.random()*5);
+                  
+                document.getElementById("body").style.backgroundColor = `${colors[num]}`;
+              var c=  document.getElementsByTagName("p");
+                  c[num].innerHTML=colors[num];
+            };
+      </script>
+</body>
+</html>

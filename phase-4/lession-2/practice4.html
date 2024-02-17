@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Maps and Classes.</title>
+      <script>
+            class map{
+                  constructor(){
+                        this.a = new Map();
+                  }
+                  add(key,value){
+                        this.a.set(key,value);
+                  }
+                  
+                  getValueByKey(k) {   
+                        return this.a.get(k);
+                  }
+                  b = new Map([
+                              [1,"one"],
+                              [2,"two"]
+                  ]);
+            }
+            var m = new map();
+            m.add("harsha", 807483841);
+            m.add("sai",956293841);
+            m.add("Ram", 8956293841);
+            console.log(m.a);
+            
+
+            class persondetails{
+                  constructor(name, age){
+                        this.name = name;
+                        this.age = age;
+                  }
+            }
+            class Storedetails{
+                  constructor(name, age){
+                        this.name = name;
+                        this.age = age;
+                        this.memory = new Map();
+                  }
+                  setDetails(){
+                        let p = new persondetails(this.name,this.age);
+                        this.memory.set(this.name, p);
+                        console.log(this.memory);
+                  }
+            }
+            var s = new Storedetails("Harry", "25");
+            s.setDetails();
+      </script>
+</head>
+<body>
+
+      
+</body>
+</html>
