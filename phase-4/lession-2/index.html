@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <script src="day20.js"></script>
+      <style>
+            h1{color:blue}
+            h1,p{color:yellow}
+      </style>
+      <script>
+            let a ="a";
+            let b = new String("a");
+            console.log(a===b);
+            function greetUser (isLoggedIn) {
+                  if (isLoggedIn) {
+                        let message="Welcome to ES6";
+                  }
+                  // return message;
+            }
+            // console.log (greetUser (true));
+            // console.log (greetUser (false));
+
+            let employee = {
+                  empId: '11001',
+                  empName : {
+                        firstName: 'John',
+                        middleName: 'Thomson',
+                        lastName: 'Mark',
+                        empStatus: 'Active'
+                  }
+            }
+            let {firstName:middleName, lastName} = employee.empName;
+            console.log (middleName);
+
+
+      </script>
+</head>
+<body>
+      <p>1</p>
+      <h1>2</h1>
+      <p style="color:rgb(185, 20, 42)">3</p>
+      <h1>4</h1>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            let person={
+                  name:"harsha",
+                  age:23
+            }
+            function getdetails(values,x,y){
+                  return `name ${this.name} You have age ${this.age} value ${x} ${y}<br>`
+            }
+            let result = getdetails.call(person,"Harry",44,55);
+            document.write(result);
+
+            let result2 = getdetails.apply(person,[123,45]);
+            document.write(result2);
+
+      </script>
+</body>
+</html>
