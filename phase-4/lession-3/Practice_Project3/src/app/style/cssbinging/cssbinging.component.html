@@ -1,0 +1,21 @@
+<button (click)="valid = !valid">Click To Action</button>
+
+<div class="div" [style.color] ="valid ? 'green':'red'">
+      <p>Action tag 2</p>
+</div>
+
+<div class="div" [style.backgroundColor] ="valid ? 'yellow':'gay'">
+      <p>Action tag 3</p>
+</div>
+
+<div class="div" [style.fontSize.px] ="valid ? '50':'40'" >
+      <p>Action tag 4</p>
+</div>
+
+<div class="div" [style.fontSize.%] ="valid ? '50':'40'" >
+      <p>Action tag 4</p>
+</div>
+
+<div class="div" [style.fontFamily]="valid ? 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif': 'Times New Roman'">
+      <p>Action tag 4</p>
+</div>
