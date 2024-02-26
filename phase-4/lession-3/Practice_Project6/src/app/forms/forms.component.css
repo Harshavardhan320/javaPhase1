@@ -1,0 +1,13 @@
+.errorMessage{
+      color:white;
+      width:fit-content;
+      background-color: red;
+      padding:5px;
+      margin-left:30px;
+      margin-top:10px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+}
+.form-group{
+      padding:10px;
+}

@@ -1,0 +1,20 @@
+<div class="row-2">
+      <div class="col-md-8">
+            <table border="1">
+                  <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                  </tr>
+                  <tr *ngFor="let person of passdata()">
+                        <td>{{person.id}}</td>
+                        <td><a routerLink="./{{person.id}}" routerLinkActive="active">
+                              {{person.name}}
+                        </a></td>
+                  </tr>
+            </table>
+      </div>
+      <div class="col-md-8">
+            <router-outlet></router-outlet>
+            <!-- <app-persondetails></app-persondetails> -->
+      </div>
+</div>

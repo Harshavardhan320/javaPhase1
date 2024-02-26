@@ -1,0 +1,43 @@
+
+<form [formGroup]="vld" class="form-control">
+      <div class="form-group">
+
+            <label for="username">Username: </label>
+            
+            <input id="username" formControlName="username">
+
+            <div *ngIf ="vld.get('username')?.hasError('required')" class="errorMessage" role="alert">
+                  Enter Username
+            </div>
+            <div *ngIf ="vld.get('username')?.hasError('minlength')"class="errorMessage" role="alert">
+                  Max length is 10 characters
+            </div>
+      </div>
+      <div class="form-group">
+            <label for="password">Password: </label>
+
+            <input type="password" formControlName="password">
+
+            <div *ngIf="vld.get('password')?.hasError('required')" class="errorMessage">
+                  <p>Enter The Password</p>
+            </div>
+            <div *ngIf="vld.get('password')?.hasError('minlength')" class="errorMessage">
+                  <p>Your Password Must Have Above 5 characters</p>
+            </div>
+      </div>
+      <div class="form-group">
+            <label for="Modile Number">Modile: </label>
+
+            <input formControlName="phonenumber">
+
+            <div *ngIf="vld.get('phonenumber')?.hasError('pattern') " class="errorMessage">
+                  Invalid Phone Number.
+            </div>
+            <div *ngIf="vld.get('phonenumber')?.hasError('required')" class="errorMessage" style="background-color:green">
+                  enter The Mobile Number.
+            </div>
+            <div *ngIf="vld.get('phonenumber')?.hasError('maxlength')" class="errorMessage">
+                  Your  mobile number must be 10 digits.
+            </div>
+      </div>
+</form>
