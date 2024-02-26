@@ -10,6 +10,9 @@ import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angu
   styleUrl: './forms.component.css'
 })
 export class FormsComponent implements OnInit {
+submit() {
+  console.log("submited")
+}
   vld!: any;
   ngOnInit(): void {
     
@@ -18,7 +21,7 @@ export class FormsComponent implements OnInit {
     this.vld = this.fv.group({
       username:["", [Validators.required, Validators.minLength(3)]],
       password:["", [Validators.required, Validators.minLength(5)]],
-      phonenumber:["", [Validators.required,Validators.pattern('/^\d+(\.\d{1,2})?$/'), Validators.max(10)]],
+      phonenumber:["", [Validators.required, Validators.minLength(10)]],
     });  
   }
 

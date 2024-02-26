@@ -30,14 +30,16 @@
 
             <input formControlName="phonenumber">
 
-            <div *ngIf="vld.get('phonenumber')?.hasError('pattern') " class="errorMessage">
+            <div *ngIf="vld.get('phonenumber')?.hasError('pattern')" class="errorMessage">
                   Invalid Phone Number.
             </div>
             <div *ngIf="vld.get('phonenumber')?.hasError('required')" class="errorMessage" style="background-color:green">
                   enter The Mobile Number.
             </div>
-            <div *ngIf="vld.get('phonenumber')?.hasError('maxlength')" class="errorMessage">
+            <div *ngIf="vld.get('phonenumber')?.hasError('minlength')" class="errorMessage">
                   Your  mobile number must be 10 digits.
             </div>
+
+            <button (click)="submit()" [disabled] ="vld.invalid">Submit</button>
       </div>
 </form>
