@@ -8,10 +8,18 @@ export class DreDirective {
 
   constructor(private el: ElementRef){}
 
-  @HostListener('click') onMouseClick(){
-    this.hightlight('red');
+  @HostListener('click') click(){
+    this.hightlight('red', 'overline');
   }
-  private hightlight(color:String | null){
+  @HostListener('mouseenter') onMouseEnter(){
+    this.hightlight('blue', 'underline');
+  }
+  @HostListener('mouseleave') onMouseleave(){
+    this.hightlight('green', 'overline');
+  }
+  private hightlight(color:String | null, text:String | null){
     this.el.nativeElement.style.backgroundColor = color;
+    this.el.nativeElement.style.textDecoration= text;
+    this.el.nativeElement.style.fontSize='23px';
   }
 }
